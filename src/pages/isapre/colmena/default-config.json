@@ -1,0 +1,30 @@
+{
+  "timeout": 10000,
+  "url": "https://www.colmena.cl/",
+  "selectors": [
+    {
+      "name": "input-rut",
+      "type": "input",
+      "page": "login",
+      "value": "//input[@formcontrolname = 'username']"
+    },
+    {
+      "name": "input-clave",
+      "type": "input",
+      "page": "login",
+      "value": "//input[@formcontrolname = 'password']"
+    },
+    {
+      "name": "btn-login",
+      "type": "button",
+      "page": "login",
+      "value": ".submit-login"
+    },
+    {
+      "name": "balance-total",
+      "type": "text",
+      "page": "dashboard",
+      "value": "//app-excedentes//app-text[@theme='heading2']"
+    }
+  ]
+}

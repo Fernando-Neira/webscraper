@@ -1,11 +1,11 @@
 const defaultConfig = require('./default-config.json')
 const utils = require('../../utils')
 
-const LOGGER_NAME = '[ColmenaPage]'
+const LOGGER_NAME = '[AfpModeloPage]'
 
-class ColmenaPage {
+class AfpModeloPage {
   constructor (page, config = defaultConfig) {
-    this.PAGE_URL = process.env.COLMENA_LOGIN_URL
+    this.PAGE_URL = process.env.AFMODELO_LOGIN_URL
     this.page = page
     this.configs = config
   }
@@ -30,9 +30,8 @@ class ColmenaPage {
   }
 
   async checkActualBalance () {
-    await this.page.waitForLoadState('networkidle')
-    const $$elems = await this.page.locator(utils.findSelector(this.configs.selectors, 'balance-total').value)
-    const balance = await $$elems.innerText()
+    const $$elems = await this.page.$$(utils.findSelector(this.configs.selectors, 'balance-total').value)
+    const balance = await $$elems[1].innerText()
     console.log(LOGGER_NAME, 'Actual balance:', balance)
     this.currentBalance = balance
   }
@@ -46,4 +45,4 @@ class ColmenaPage {
   }
 }
 
-module.exports = ColmenaPage
+module.exports = AfpModeloPage

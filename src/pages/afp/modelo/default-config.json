@@ -1,0 +1,30 @@
+{
+  "timeout": 10000,
+  "url": "https://www.afpmodelo.cl/",
+  "selectors": [
+    {
+      "name": "input-rut",
+      "type": "input",
+      "page": "login",
+      "value": "#ContentPlaceHolder1_Login_Rut"
+    },
+    {
+      "name": "input-clave",
+      "type": "input",
+      "page": "login",
+      "value": "#ContentPlaceHolder1_Login_Clave"
+    },
+    {
+      "name": "btn-login",
+      "type": "button",
+      "page": "login",
+      "value": "#ContentPlaceHolder1_Btn_Ingresar"
+    },
+    {
+      "name": "balance-total",
+      "type": "text",
+      "page": "dashboard",
+      "value": ".txt_total_ahorrado"
+    }
+  ]
+}
